@@ -1,0 +1,6 @@
+C:\Users\Haci\source\repos\VEG\VEG\obj\Debug\VEG.csprojAssemblyReference.cache
+C:\Users\Haci\source\repos\VEG\VEG\bin\Debug\VEG.exe.config
+C:\Users\Haci\source\repos\VEG\VEG\bin\Debug\VEG.exe
+C:\Users\Haci\source\repos\VEG\VEG\bin\Debug\VEG.pdb
+C:\Users\Haci\source\repos\VEG\VEG\obj\Debug\VEG.exe
+C:\Users\Haci\source\repos\VEG\VEG\obj\Debug\VEG.pdb
