@@ -49,7 +49,6 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="Other.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report.cs" />

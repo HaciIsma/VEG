@@ -15,10 +15,8 @@ namespace VEG
         private Timer epidemTimer;
         private Timer UITimer;
 
-
         public delegate void StateDownDelegate();
         public event StateDownDelegate StateDownEvent;
-
 
         int rangeCount;
 
