@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Timers;
 
 namespace VEG
@@ -13,12 +15,14 @@ namespace VEG
         private Timer epidemTimer;
         private Timer UITimer;
 
+
         public delegate void StateDownDelegate();
         public event StateDownDelegate StateDownEvent;
 
-        private DailySerialize day;
 
         int rangeCount;
+
+        bool checkFile = default;
 
         public Store()
         {
@@ -279,13 +283,37 @@ namespace VEG
             {
                 Bankrupt();
             }
-
-            day = new DailySerialize();
         }
 
         private void OneWeek(Object source, ElapsedEventArgs e)
         {
             Buy();
+            WriteFile();
+        }
+
+        private void WriteFile()
+        {
+            if (!checkFile)
+                File.WriteAllText($@"{Directory.GetCurrentDirectory()}\DailySerialize.json", JsonConvert.SerializeObject(new Report
+                {
+                    Day=Data.Days,
+                    Rank = Data.Rank,
+                    Capital = Data.Capital,
+                    CustomersCount = Data.CustomersCount,
+                    SoldAVG = Data.soldAVG,
+                    Status = Data.Status
+                }));
+            else
+                File.AppendAllText($@"{Directory.GetCurrentDirectory()}\DailySerialize.json", JsonConvert.SerializeObject(new Report
+                {
+                    Day=Data.Days,
+                    Rank = Data.Rank,
+                    Capital = Data.Capital,
+                    CustomersCount = Data.CustomersCount,
+                    SoldAVG = Data.soldAVG,
+                    Status = Data.Status
+                }));
+            checkFile = true;
         }
 
         private void EndEpidem(Object source, ElapsedEventArgs e)

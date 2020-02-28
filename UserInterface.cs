@@ -25,7 +25,7 @@ namespace VEG
                 else if (i == 99) Console.WriteLine(RightTop);
                 else Console.Write(HorizontalLine);
             }
-            Console.WriteLine($"{VerticalLine} VEG Store {VerticalLine} RANK :      {VerticalLine} CAPITAL :        {VerticalLine} PRODUCT RANGE :    {VerticalLine} CUSTOMERS :      {VerticalLine} DAYS :      {VerticalLine}");
+            Console.WriteLine($"{VerticalLine} VEG Store {VerticalLine} RANK : {Data.Rank,4} {VerticalLine} CAPITAL : {Data.Capital,6} {VerticalLine} PRODUCT RANGE : {Data.Range,2} {VerticalLine} CUSTOMERS : {Data.CustomersCount,4} {VerticalLine} DAYS : {Data.Days,4} {VerticalLine}");
             for (int i = 0; i < 100; ++i)
             {
                 if (i == 0) Console.Write(LeftBottom);
@@ -119,6 +119,5 @@ namespace VEG
             Subheader();
             Body();
         }
-
     }
 }
